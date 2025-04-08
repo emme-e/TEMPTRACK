@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/289c17a7-ef2a-4915-a735-3d450b6246bd)
 ... shows the layout for the folder everything is in
-ps. didn't add all the files 
+ps. didn't add all the files...
 
 ultimate aim of our project...
 to model the temperture change
@@ -25,8 +25,8 @@ might just be a question of importing a bunch of numbers for the temperature of 
   
 
 adding to the simulation folder:
-EE- a graph showing the temperature change over time
-EE- calculating the temperature of some object/container over ...time
-EE- calculaitng the time taken for some temperature change
+-EE a graph showing the temperature change over time
+-EE calculating the temperature of some object/container over ...time
+-EE calculaitng the time taken for some temperature change
 - compare our models to real life values create a null + alternative hypthesis to see whether or the model should be accepted
     - have a graph comparing the two?
