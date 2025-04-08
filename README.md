@@ -14,8 +14,8 @@ adding to the models folder
       - could do the colour thing
   
 
-- add to the newtons_law_of_cooling
-i dont know if the below is possible, but i think it would be cool.
+add to the newtons_law_of_cooling
+-i dont know if the below is possible, but i think it would be cool.
 might just be a question of importing a bunch of numbers for the temperature of container over... time
  - another way of calculating... so import lots of real world data for a particular container and use this to calculate newtons_law of cooling
       - will also need to create a some sort of system to get rid of outliers
