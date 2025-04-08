@@ -30,3 +30,8 @@ adding to the simulation folder:
 - EE calculaitng the time taken for some temperature change
 - compare our models to real life values create a null + alternative hypthesis to see whether or the model should be accepted
     - have a graph comparing the two?
+
+need to standadise the variable names:
+for: newtons_law_of_cooling(initial_temp, enviroment_temp, h, area, dt, c, m)
+for: class TemperatureConverter:
+    def __init__(self, enviroment_temp, initial_temp, input_scale, output_scale)
