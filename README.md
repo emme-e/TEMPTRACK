@@ -5,6 +5,9 @@ ps. didn't add all the files
 ultimate aim of our project...
 to model the temperture change
 
+
+please put your initals next to the thing you are working next to, and feel free to add anything you want to work on
+remember to import previous files into other files so its all connected (if need be)
 to do:
 
 adding to the models folder
@@ -22,8 +25,8 @@ might just be a question of importing a bunch of numbers for the temperature of 
   
 
 adding to the simulation folder:
-- a graph showing the temperature change over time
-- calculating the temperature of some object/container over ...time
-- calculaitng the time taken for some temperature change
+EE- a graph showing the temperature change over time
+EE- calculating the temperature of some object/container over ...time
+EE- calculaitng the time taken for some temperature change
 - compare our models to real life values create a null + alternative hypthesis to see whether or the model should be accepted
     - have a graph comparing the two?
