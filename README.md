@@ -25,8 +25,8 @@ might just be a question of importing a bunch of numbers for the temperature of 
   
 
 adding to the simulation folder:
--EE a graph showing the temperature change over time
--EE calculating the temperature of some object/container over ...time
--EE calculaitng the time taken for some temperature change
+- EE a graph showing the temperature change over time
+- EE calculating the temperature of some object/container over ...time
+- EE calculaitng the time taken for some temperature change
 - compare our models to real life values create a null + alternative hypthesis to see whether or the model should be accepted
     - have a graph comparing the two?
