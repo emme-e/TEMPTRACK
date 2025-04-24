@@ -8,7 +8,7 @@ to do:
 
 adding to the models folder
 - define more functions for other kinds of heat transfer... should be in the same folder as newtons_law_of_cooling
-  - Fourier’s Law of Heat Conduction (for solids)
+  - Fourier’s Law of Heat Conduction (for solids) **doing this now JB**
   - radiative heat transfer (eg.ovens, sunlight..)
       - could do the colour thing
   
