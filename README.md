@@ -1,33 +1,43 @@
-ultimate aim of our project...
-to model the temperture change
+# temperature change
+
+A pthon library for studying (modeling) the temperature 
+change of different objects in different conditions
+
+##tutorial
+
+We measure or record data of a specific object in a certain enviorment.
+
+1st measure data of the object
+    1.b can have two cases: a solid object and a container with water
+2nd change some parameters (ie. temp enviroment, initial temp of the object)
+3rd model (prediction) what the temperature change is (ie. a graph, and measuring specific values)
+4th record the real life version of the prediction
+    5th compare to our model (ie. have a null and alternative hypothsis to see if we should accept our model)
+
+we can use newtons law of cooling for an object containing water.
+
+Fourier’s Law of Heat Conduction for solid objects
+
+'''python
+>>> import Newtons_law_of_cooling
+>>> initial_temp=80,
+        enviroment_temp=25,
+        h=10,
+        area=0.5,
+        dt=60,
+        c=4186,
+        m=1
+'''
+Now i can use the above to calculate the new temperature after some time
+
+'''python
+>>>newtons_law_of_cooling(initial_temp, enviroment_temp, h, area, dt, c, m)
 
 
-please put your initals next to the thing you are working next to, and feel free to add anything you want to work on
-remember to import previous files into other files so its all connected (if need be)
-to do:
+...
 
-adding to the models folder
-- define more functions for other kinds of heat transfer... should be in the same folder as newtons_law_of_cooling
-  - Fourier’s Law of Heat Conduction (for solids) **doing this now JB**
-  - radiative heat transfer (eg.ovens, sunlight..)
-      - could do the colour thing
-  
+## how to guide
 
-add to the newtons_law_of_cooling
--i dont know if the below is possible, but i think it would be cool.
-might just be a question of importing a bunch of numbers for the temperature of container over... time
- - another way of calculating... so import lots of real world data for a particular container and use this to calculate newtons_law of cooling
-      - will also need to create a some sort of system to get rid of outliers
-  
+## Discussion
 
-adding to the simulation folder:
-- EE a graph showing the temperature change over time
-- EE calculating the temperature of some object/container over ...time
-- EE calculaitng the time taken for some temperature change
-- compare our models to real life values create a null + alternative hypthesis to see whether or the model should be accepted
-    - have a graph comparing the two?
-
-need to standadise the variable names:
-for: newtons_law_of_cooling(initial_temp, enviroment_temp, h, area, dt, c, m)
-for: class TemperatureConverter:
-    def __init__(self, enviroment_temp, initial_temp, input_scale, output_scale)
+## Reference
