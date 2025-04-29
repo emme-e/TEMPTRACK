@@ -13,10 +13,8 @@ We measure or record data of a specific object in a certain enviorment.
 - 3rd model (prediction) what the temperature change is (ie. a graph, and measuring specific values)
 - 4th record the real life version of the prediction
 - 5th compare to our model (ie. have a null and alternative hypothsis to see if we should accept our model)
-
-we can use newtons law of cooling for an object containing water.
-
-Fourier’s Law of Heat Conduction for solid objects
+        - we can use newtons law of cooling for an object containing water.
+        - Fourier’s Law of Heat Conduction for solid objects
 
 '''python
 >>> import Newtons_law_of_cooling
