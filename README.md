@@ -3,7 +3,7 @@
 A pthon library for studying (modeling) the temperature 
 change of different objects in different conditions
 
-##tutorial
+## tutorial
 
 We measure or record data of a specific object in a certain enviorment.
 
