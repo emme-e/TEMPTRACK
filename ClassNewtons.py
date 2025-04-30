@@ -8,7 +8,7 @@ class class_newtons:
     to the difference between its own temperature and the ambient temperature.
     """
     def __init__(self, k=None):
-        self.k = k  # Cooling constant
+        self.k = k
 
     def rate_of_change(self, initial_temp, temp_final, time_interval):
         """
