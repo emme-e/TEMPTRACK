@@ -32,8 +32,7 @@ def test_calculate_k(initial_temp, temp_final, temp_env, dt):
     
     assert test_expected_k == expected_k
 
-from class_newtons import temperature_at_time
-def test_temperature_at_time(initial_temp, temp_env, dt):
+def test_temperature_at_time(initial_temp, temp_env, dt, k):
     """
     Test the temperature at a given time using the cooling constant 'k'.
     1_e -5 is scientific notation for 0.00001
