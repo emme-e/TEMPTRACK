@@ -18,26 +18,51 @@ We measure or record data of a specific object in a certain environment.
         - Fourier’s Law of Heat Conduction for solid objects
 
 '''python
->>> import Newtons_law_of_cooling
->>> initial_temp=80,
-        enviroment_temp=25,
-        h=10,
-        area=0.5,
-        dt=60,
-        c=4186,
-        m=1
+>>> from ClassNewtons import rate_of_change
+>>> from ClassNewtons import calculate_k
+>>> from ClassNewtons import temperature_at_time
+>>> ex_initial_temp = 100
+>>> ex_temp_final = 70
+>>> ex_temp_env = 60
+>>> ex_dt = 10
+>>> ex_k = 0.14
+
 '''
-Now i can use the above to calculate the new temperature after some time
+Now i can use the above to calculate the rate of change, the cooling constant(k) and the temperature at some time
 
 '''python
->>>newtons_law_of_cooling(initial_temp, enviroment_temp, h, area, dt, c, m)
+>>> rate_of_change(initial_temp = ex_initial_temp, temp_final=ex_temp_final, dt=ex_dt)
+3.0
 
+>>> calculate_k(initial_temp= ex_initial_temp, temp_final=ex_temp_final, temp_env=ex_temp_env, dt=ex_dt)
+0.14
+
+>>> temperature_at_time(initial_temp=ex_initial_temp, temp_env=ex_temp_env, dt=ex_dt, k=ex_k)
+69.86
+
+'''
 
 ...
 
 ## how to guide
 
+To compute the temperature after given the 'dt', 'initial_tem', 'temp_final', 'k' and 'temp_env'
+
+'''python
+>>> import math
+>>> import ClassNewtons
+>>> ClassNewtons.temperature_at_time(initial_temp = 100, temp_env = 60, dt = 10, k= 0.14)
+69.86
+
 ## Discussion
+
+### list of functionality
+
+A list of functionality in this library is:
+
+- 'rate_of_change'
+- 'calculate_k'
+- 'temperature_at_time'
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
