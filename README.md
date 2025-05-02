@@ -51,6 +51,10 @@ To compute the temperature after given the 'dt', 'initial_tem', 'temp_final', 'k
 '''python
 >>> import math
 >>> import ClassNewtons
+>>> ClassNewtons.rate_of_change(initial_temp = 100, temp_final=70, dt=10)
+3.0
+>>> ClassNewtons.calculate_k(initial_temp= 100, temp_final=70, temp_env=60, dt=10)
+0.14
 >>> ClassNewtons.temperature_at_time(initial_temp = 100, temp_env = 60, dt = 10, k= 0.14)
 69.86
 
