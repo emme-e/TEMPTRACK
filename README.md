@@ -39,11 +39,18 @@ Now i can use the above to calculate the new temperature after some time
 
 ## Discussion
 ### Newton's cooling law
-Sir Isaac Newton introduced his cooling law which is based on purely empirical measurements in the 1700's due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature.
+Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
-Newtons Law of Cooling is defined as the rate at which heat is lost from a body being directly proportional to the temperature difference between a body and its surroundings and is given by the equation:
+Newtons Law of Cooling is defined as the rate at which heat is lost from a body being directly proportional to the temperature difference between a bodyand its surroundings. This is given by the equation: 
 
 $\frac{dy}{dx} = -k(T-T_a)$
+
+### Fouriers Law of Heat Conduction for Solid Objects:
+This is the rate at which heat transfers through an object is directly proportional to the negative gradient of temperature and the cross-sectional area through which the heat flows and is said to be inversely proportional to the materials thickness. 
+
+Joseph Fourier of France put together his equation at the beginning of the 19th century who's heat diffusion model later went on to be used by others when describing ther dynamic physical systems: 
+
+$\frac{dQ}{dt} = -KA (\frac{dT}{dx})$ 
 
 
 
@@ -54,3 +61,7 @@ Available at: https://www.quadco.engineering/en/know-how/newtons-law-of-cooling.
 
 Lily Hulatt (2025) Newton’s Law Of Cooling, Study Smarter.
 Available at: https://knowledge.carolina.com/discipline/interdisciplinary/math/newtons-law-of-cooling/ (Accessed: 2 May 2025) 
+
+T.N.Narasimhan, Reviews of Geophysics Volume 37, Issue 1, The American Geophysical Union, 1999 
+
+ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025) 
