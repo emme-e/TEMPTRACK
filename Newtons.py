@@ -7,7 +7,7 @@ def rate_of_change(initial_temp, temp_final, dt):
     Parameters:
     - initial_temp (float): Initial temperature of the object
     - final_temp (float): Final temperature after the time interval
-    - dt (float): Time over which cooling occurs
+    - dt (float): Time over which cooling occurs (in seconds)
 
     Returns:
     - float: Rate of temperature change
@@ -29,7 +29,7 @@ def calculate_k(initial_temp, temp_final, temp_env, dt):
     - initial_temp(float): Initial temperature of the object
     - final_temp(float): Final temperature after time dt
     - ambient_temp(float): Ambient/environment temperature
-    - dt(float): Time interval in seconds
+    - dt(float): Time interval in minutes
 
     Returns:
     - float: Cooling constant k
@@ -44,10 +44,10 @@ def calculate_k(initial_temp, temp_final, temp_env, dt):
     
     ratio = (temp_final - temp_env) / (initial_temp - temp_env)
     if ratio <= 0:
-        raise ValueError("The ratio of temperatures must be positive for the logarithm to be defined.")
+       raise ValueError("The ratio of temperatures must be positive for the logarithm to be defined.")
     if dt <= 0:
         raise ValueError("Time interval must be positive.")
-    k = round(-math.log((temp_final - temp_env) / (initial_temp - temp_env)) / dt, 2)
+    k = round(-math.log((temp_final - temp_env) / (initial_temp - temp_env)) /dt, 2)
     return k
 
 
@@ -60,7 +60,7 @@ def temperature_at_time(initial_temp, temp_env, dt, k):
     Parameters:
     - initial_temp (float): Initial temperature of the object
     - ambient_temp (float): Ambient/environment temperature
-    - dt (float): Time in seconds
+    - dt (float): Time in minutes
     - k (float): Cooling constant
 
     Returns:
