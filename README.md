@@ -5,17 +5,17 @@ change of different objects in different conditions
 
 ## tutorial
 
-We measure or record data of a specific object in a certain environment.
+This code allows you to take minimal real world values and calculate a wealth of information from it.
 
-- 1st measure data of the object
-- 1.b can have two cases: a solid object and a container with water
-- 2nd change some parameters (ie. temp enviroment, initial temp of the object)
-- 3rd model (prediction) what the temperature change is (ie. a graph, and measuring specific values)
-- 4th record the real life version of the prediction
-- 5th compare to our models (ie. have a null and alternative hypothsis to see if we should accept our model).
-  
-        - we can use newtons law of cooling for an object containing water.
-        - Fourier’s Law of Heat Conduction for solid objects
+You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between then and the temperature of the enviorment.
+
+These values are then used to calculate first the rate of temperature change of the object.
+The cooling constant of that object. And the temperature of the object at any time. 
+This is done by using newtons law of cooling.
+
+The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale
+
+A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value.
 
 '''python
 >>> from Newtons import rate_of_change, calculate_k, temperature_at_time
