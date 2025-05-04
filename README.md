@@ -12,7 +12,7 @@ We measure or record data of a specific object in a certain environment.
 - 2nd change some parameters (ie. temp enviroment, initial temp of the object)
 - 3rd model (prediction) what the temperature change is (ie. a graph, and measuring specific values)
 - 4th record the real life version of the prediction
-- 5th compare to our model (ie. have a null and alternative hypothsis to see if we should accept our model).
+- 5th compare to our models (ie. have a null and alternative hypothsis to see if we should accept our model).
   
         - we can use newtons law of cooling for an object containing water.
         - Fourier’s Law of Heat Conduction for solid objects
@@ -44,6 +44,23 @@ Now i can use the above to calculate the rate of change, the cooling constant(k)
 
 ...
 
+'''python
+>>> from fourier_law import fourier_law
+>>> k = 50
+>>> A = 100
+>>> dT_dx = 3
+
+'''
+I can use the above parameters to measure the rate of heat transfer through a particular solid
+
+'''python
+>>> fourier_law(expected_q = -k * A * dT_dx)
+-15000.0
+
+'''
+
+...
+
 ## how to guide
 
 To compute the temperature after given the 'dt', 'initial_tem', 'temp_final', 'k' and 'temp_env'
@@ -57,8 +74,19 @@ To compute the temperature after given the 'dt', 'initial_tem', 'temp_final', 'k
 0.14
 >>> ClassNewtons.temperature_at_time(initial_temp = 100, temp_env = 60, dt = 10, k= 0.14)
 69.86
+'''
+To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
+
+'''python
+>>> import math
+>>> import fourier_law
+>>> fourier_law.expected_q(-k = 50, A = 100, dT_dx = 3)
+-15000.0
+'''
+
 
 ## Discussion
+
 
 ### list of functionality
 
@@ -67,6 +95,9 @@ A list of functionality in this library is:
 - 'rate_of_change'
 - 'calculate_k'
 - 'temperature_at_time'
+
+A list of functionionallity in this fourier model library is:
+'fourier_law'
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
@@ -80,7 +111,6 @@ This is the rate at which heat transfers through an object is directly proportio
 Joseph Fourier of France put together his equation at the beginning of the 19th century who's heat diffusion model later went on to be used by others when describing ther dynamic physical systems: 
 
 $\frac{dQ}{dt} = -KA (\frac{dT}{dx})$ 
-
 
 
 
