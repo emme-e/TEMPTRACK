@@ -32,3 +32,7 @@ def graphing_newtons(input_scale,initial_temp, temp_final, temp_env, dt, temp_ra
     plt.legend()
     plt.grid(True)
     plt.show()
+
+
+
+
