@@ -18,41 +18,51 @@ def temp_converter(input_scale, output_scale, temp_env, initial_temp, temp_final
 
         Returns:
         - tuple: Converted temperatures in the specified output scale
+        - Raises ValueError if the input scale is invalid or if the conversion results
+          in a temperature below absolute zero.
         """
         if input_scale == output_scale:
             return temp_env, initial_temp, temp_final
 
         if input_scale == "K":
             if output_scale == "C":
-                return temp_env - 273.15, initial_temp - 273.15, temp_final - 273.15
+                temp_env_conv = temp_env - 273.15
+                initial_temp_conv = initial_temp - 273.15
+                temp_final_conv = temp_final - 273.15
+                if temp_env_conv < -273.15 or initial_temp_conv < -273.15 or temp_final_conv < -273.15:
+                    raise ValueError("Temperature below absolute zero in Celsius.")
+                return temp_env_conv, initial_temp_conv, temp_final_conv
+            
             elif output_scale == "F":
-                return (temp_env * 9/5) - 459.67, (initial_temp * 9/5) - 459.67, (temp_final * 9/5) - 459.67
+                temp_env_conv, initial_temp_conv, temp_final_conv = (temp_env * 9/5) - 459.67, (initial_temp * 9/5) - 459.67, (temp_final * 9/5) - 459.67
+                if temp_env_conv < -459.67 or initial_temp_conv < -459.67 or temp_final_conv < -459.67:
+                    raise ValueError("Temperature below absolute zero in Fahrenheit.")
+                return temp_env_conv, initial_temp_conv, temp_final_conv
+            
         elif input_scale == "C":
             if output_scale == "K":
-                return temp_env + 273.15, initial_temp + 273.15, temp_final + 273.15
+                temp_env, initial_temp, temp_final = temp_env + 273.15, initial_temp + 273.15, temp_final + 273.15
+                if temp_env < 0 or initial_temp < 0 or temp_final < 0:
+                    raise ValueError("Temperature below absolute zero in Kelvin.")
+                return temp_env, initial_temp, temp_final
+            
             elif output_scale == "F":
-                return (temp_env * 9/5) + 32, (initial_temp * 9/5) + 32, (temp_final * 9/5) + 32
+                temp_env, initial_temp, temp_final = (temp_env * 9/5) + 32, (initial_temp * 9/5) + 32, (temp_final * 9/5) + 32
+                if temp_env < -459.67 or initial_temp < -459.67 or temp_final < -459.67:
+                    raise ValueError("Temperature below absolute zero in Fahrenheit.")
+                return temp_env, initial_temp, temp_final
+            
         elif input_scale == "F":
             if output_scale == "C":
-                return (temp_env - 32) * 5/9, (initial_temp - 32) * 5/9, (temp_final - 32) * 5/9
+                temp_env, initial_temp, temp_final = (temp_env - 32) * 5/9, (initial_temp - 32) * 5/9, (temp_final - 32) * 5/9
+                if temp_env < -273.15 or initial_temp < -273.15 or temp_final < -273.15:    
+                    raise ValueError("Temperature below absolute zero in Celsius.")
+                return temp_env, initial_temp, temp_final
+            
             elif output_scale == "K":
-                return (temp_env + 459.67) * 5/9, (initial_temp + 459.67) * 5/9, (temp_final + 459.67) * 5/9
+                temp_env, initial_temp, temp_final = (temp_env + 459.67) * 5/9, (initial_temp + 459.67) * 5/9, (temp_final + 459.67) * 5/9
+                if temp_env < 0 or initial_temp < 0 or temp_final < 0:
+                    raise ValueError("Temperature below absolute zero in Kelvin.")
+                return temp_env, initial_temp, temp_final
 
         raise ValueError("Invalid temperature scale conversion.")
-
-def update_temperature(temp_env_conv, initial_temp_conv, temp_final_conv, output_scale):
-    """
-    assigning names to the converted temperatures, and ensuring no temperature is below absolute zero.
-    """
-    temp_env_conv, initial_temp_conv, temp_final_conv = temp_converter(temp_env_conv, initial_temp_conv, temp_final_conv)
-    
-    if output_scale == "K" and temp_env_conv < -273.15:
-        raise ValueError("Temperature below absolute zero in Celsius.")
-    elif output_scale == "F" and temp_env_conv < -459.67:
-        raise ValueError("Temperature below absolute zero in Fahrenheit.")
-    elif output_scale == "K" and temp_env_conv < 0:
-        raise ValueError("Temperature below absolute zero in Kelvin.")
-    elif output_scale not in ("C", "F", "K"):
-        raise ValueError("Invalid temperature scale.")
-    
-    return temp_env_conv, initial_temp_conv, temp_final_conv
