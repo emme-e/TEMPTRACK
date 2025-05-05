@@ -22,6 +22,8 @@ class fourier_hypothesis_test:
             self.real_world_value = float(input("Enter the real-world heat transfer rate (W):"))
             self.sig = float(input("enter the significance (in decimals)"))
             self.run_test()
+        except ValueError:
+            print("Please enter numeric values.")    
     def run_test(self):
         modeled_value, _ = fourier_law(self.k, self.A, self.dT_dx)
         margin = self.sig * self.real_world_value
@@ -36,5 +38,5 @@ class fourier_hypothesis_test:
         if lower_bound <= modeled_value <= upper_bound:
             print (f'Failed to reject null hypothesis at {self.sig} significance level.')
         else:
-            print (f'Reject null hypothesis at {self.sig} significance level.')     
+            print (f'Reject null hypothesis at {self.sig} significance level.')      
 
