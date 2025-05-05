@@ -3,7 +3,7 @@ import math
 def test_fourier_law(k ,A , dT_dx):
     """ testing the heat transfer rate through a solid
 
-    Args:
+    parameters:
         k (float): this is the thermal conductivity and treated as the constant
         A (float): this represents the cross sectional area of the solid we are testing
         dT_dx (float): this is the temperature gradient measuring the rate of heat transfer
