@@ -7,10 +7,9 @@ change of different objects in different conditions
 
 This code allows you to take minimal real world values and calculate a wealth of information from it.
 
-You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between then and the temperature of the enviorment.
+You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between them and the temperature of the enviorment.
 
-These values are then used to calculate first the rate of temperature change of the object.
-The cooling constant of that object. And the temperature of the object at any time. 
+These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. 
 This is done by using newtons law of cooling.
 
 The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale
