@@ -17,12 +17,9 @@ for dTdx_value in temp_gradients:
     q_value_numeric = sym.N(q_value)
     heat_transfer_rates.append(q_value_numeric)
 
-plt.figure(figsize=(10, 5))
-plt.plot(temp_gradients, heat_transfer_rates, color='crimson')
+plt.plot(temp_gradients, heat_transfer_rates)
 plt.title("Heat Transfer Rate vs Temperature Gradient")
 plt.xlabel("Temperature Gradient (dT/dx) in K/m")
 plt.ylabel("Heat Transfer Rate (q) in Watts")
 plt.grid(True)
-plt.axhline(0, color='black', linestyle='--', linewidth=0.5)
-plt.tight_layout()
 plt.show()
