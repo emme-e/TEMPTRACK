@@ -1,9 +1,9 @@
-# temperature change
+# Temperature Change
 
 A python library for studying (modeling) the temperature 
 change of different objects in different conditions
 
-## tutorial
+## Tutorial
 
 This code allows you to take minimal real world values and calculate a wealth of information from it.
 
@@ -92,7 +92,7 @@ I can use the above parameters to measure the rate of heat transfer through a pa
 
 ...
 
-## how to guide
+## How to guide
 
 To compute the rate of change, the cooling constant, and temperature at some time_
 
@@ -145,7 +145,7 @@ To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
 ## Discussion
 
 
-### list of functionality
+### List of functionality
 
 A list of functionality in this library is:
 
