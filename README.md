@@ -18,18 +18,31 @@ A graph can then be modeled to show this and a hypothsis test can be drawn to se
 
 '''python
 >>> from Newtons import rate_of_change, calculate_k, temperature_at_time
+
 >>> from TempConverter import temp_converter
+
 >>> from ConvertNewtons import conv_temp_at_time, conv_rate_of_change
+
 >>> from GraphNewtons import graphing_newtons
+
 >>> from HypothesisTestingNewtons import hypothesis_test
+
 >>> ex_initial_temp = 100
+
 >>> ex_temp_final = 70
+
 >>> ex_temp_env = 60
+
 >>> ex_dt = 10
+
 >>> ex_k = 0.14
+
 >>> ex_input_scale = "C"
+
 >>> ex_output_scale = "K"
+
 >>> ex_temp_range = 100
+
 >>> ex_real_world_value = 75
 
 '''
@@ -38,8 +51,10 @@ Now i can use the above to calculate the rate of change, the cooling constant(k)
 '''python
 >>> rate_of_change(initial_temp = ex_initial_temp, temp_final=ex_temp_final, dt=ex_dt)
 3.0
+
 >>> calculate_k(initial_temp= ex_initial_temp, temp_final=ex_temp_final, temp_env=ex_temp_env, dt=ex_dt)
 0.14
+
 >>> temperature_at_time(initial_temp=ex_initial_temp, temp_env=ex_temp_env, dt=ex_dt, k=ex_k)
 69.86
 
@@ -56,6 +71,7 @@ I can also directly calculate the calculate the rate of change, the cooling cons
 ''' python
 >>> conv_temp_at_time(input_scale = ex_input_scale, output_scale = ex_output_scale, initial_temp = ex_initial_temp, temp_final = ex_temp_final ,temp_env = ex_temp_env, dt = ex_dt)
 343.01
+
 >>> rate_of_change(initial_temp = ex_initial_temp, temp_final = ex_temp_final ,dt = ex_dt)
 3.0
 
@@ -77,8 +93,11 @@ a hypothesis can be run to compare the modeled tempature at some time to the rea
 
 '''python
 >>> from fourier_law import fourier_law
+
 >>> k = 50
+
 >>> A = 100
+
 >>> dT_dx = 3
 
 '''
@@ -98,14 +117,21 @@ To compute the rate of change, the cooling constant, and temperature at some tim
 
 '''python
 >>> import Newtons
+
 >>> import TempConverter
+
 >>> import ConvertNewtons
+
 >>> import GraphNewtons
+
 >>> import HypothesisTestingNewtons
+
 >>> Newtons.rate_of_change(initial_temp = 100, temp_final=70, dt=10)
 3.0
+
 >>> Newtons.calculate_k(initial_temp= 100, temp_final=70, temp_env=60, dt=10)
 0.14
+
 >>> Newtons.temperature_at_time(initial_temp = 100, temp_env = 60, dt = 10, k= 0.14)
 69.86
 
@@ -128,6 +154,7 @@ Display a graph modeling newtons law of cooling
 
 '''
 A hypothsis test to see whether the modeled prediction is close to the real world value
+
 '''python
 >>> HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Bounded by:[71.25,78.75].'
@@ -136,7 +163,9 @@ To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
 
 '''python
 >>> import math
+
 >>> import fourier_law
+
 >>> fourier_law.expected_q(-k = 50, A = 100, dT_dx = 3)
 -15000.0
 '''
