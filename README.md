@@ -14,7 +14,7 @@ This is done by using newtons law of cooling.
 
 The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale
 
-A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value.
+A graph can then be modeled to show this and a hypothsis test can be drawn to see whether the model is close to the real life value.
 
 '''python
 >>> from Newtons import rate_of_change, calculate_k, temperature_at_time
