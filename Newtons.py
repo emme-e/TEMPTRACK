@@ -38,7 +38,7 @@ def calculate_k(initial_temp, temp_final, temp_env, dt):
     - ValueError: If temperatures are invalid for the formula
     """
     if temp_final == temp_env:
-        raise ValueError("final temperature cannot equal enviorment temperature, as ln(0) is undefined .")
+        raise ValueError("final temperature cannot equal environment temperature, as ln(0) is undefined .")
     if initial_temp == temp_env:
         raise ValueError("Initial temperature cannot equal environment temperature, as it causes division by zero.")
     
