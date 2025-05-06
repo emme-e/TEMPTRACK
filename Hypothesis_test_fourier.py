@@ -38,5 +38,6 @@ class fourier_hypothesis_test:
         if lower_bound <= modeled_value <= upper_bound:
             print (f'Failed to reject null hypothesis at {self.sig} significance level.')
         else:
-            print (f'Reject null hypothesis at {self.sig} significance level.')      
+            print (f'Reject null hypothesis at {self.sig} significance level.')   
+    test = fourier_hypothesis_test()
 
