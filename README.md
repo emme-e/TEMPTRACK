@@ -168,7 +168,7 @@ $\frac{dy}{dx} = -k(T-T_a)$
 ### Fouriers Law of Heat Conduction for Solid Objects:
 This is the rate at which heat transfers through an object is directly proportional to the negative gradient of temperature and the cross-sectional area through which the heat flows and is said to be inversely proportional to the materials thickness. 
 
-Joseph Fourier of France put together his equation at the beginning of the 19th century who's heat diffusion model later went on to be used by others when describing ther dynamic physical systems: 
+Joseph Fourier of France put together his equation at the beginning of the 19th century who's heat diffusion model later went on to be used by others when describing their dynamic physical systems: 
 
 $\frac{dQ}{dt} = -KA (\frac{dT}{dx})$ 
 
