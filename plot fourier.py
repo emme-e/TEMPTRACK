@@ -2,24 +2,40 @@ import sympy as sym
 import matplotlib.pyplot as plt
 import numpy as np
 
-k, A, x = sym.symbols("k A x")
-T = sym.Function("T")(x)  
-q_expression = -k * A * sym.diff(T, x)
+def fourier_plot(k_value, A_value):
+    """
+    this plots the heat transfer rate (q) vs temperature gradient (dT/dx)
+    using fourier's law: q = -k * A * dT/dx
 
-k_value = float(input("Enter thermal conductivity k (W/m·K): "))
-A_value = float(input("Enter cross-sectional area A (m^2): "))
+    Parameters:
+        k_value (float): Thermal conductivity (W/m * K)
+        A_value (float): Cross_sectional area (m^2)
+    """
+    k, A, x = sym.symbols("k A x")
+    T = sym.Function("T")(x)  
+    q_expression = -k * A * sym.diff(T, x)
 
-temp_gradients = np.linspace(-100, 100, 100)  # from -100 to 100 K/m
-heat_transfer_rates = []
+    temp_gradients = np.linspace(-100, 100, 100)
+    heat_transfer_rates = []
 
-for dTdx_value in temp_gradients:
-    q_value = q_expression.subs({k: k_value, A: A_value, sym.diff(T, x): dTdx_value})
-    q_value_numeric = sym.N(q_value)
-    heat_transfer_rates.append(q_value_numeric)
+    for dTdx_value in temp_gradients:
+        q_value = q_expression.subs({k: k_value, A: A_value, sym.diff(T, x): dTdx_value})
+        q_value_numeric = sym.N(q_value)
+        heat_transfer_rates.append(q_value_numeric)
 
-plt.plot(temp_gradients, heat_transfer_rates)
-plt.title("Heat Transfer Rate vs Temperature Gradient")
-plt.xlabel("Temperature Gradient (dT/dx) in K/m")
-plt.ylabel("Heat Transfer Rate (q) in Watts")
-plt.grid(True)
-plt.show()
+    plt.plot(temp_gradients, heat_transfer_rates)
+    plt.title("Heat Transfer Rate vs Temperature Gradient")
+    plt.xlabel("Temperature Gradient (dT/dx) in K/m")
+    plt.ylabel("Heat Transfer Rate (q) in Watts")
+    plt.grid(True)
+    plt.show()
+
+if__name__ = "__main__":
+    try:
+        k = float(input("Enter thermal conductivity k (W/m·K): "))
+        A = float(input("Enter cross-sectional area A (m^2): "))
+        fourier_plot(k, A)
+except ValueError:
+    print("please enter valid numeric values for k and A.")
+
+
