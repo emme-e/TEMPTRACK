@@ -4,7 +4,7 @@ from ConvertNewtons import conv_temp_at_time, conv_rate_of_change
 
 def test_conv_temp_at_time():
     """
-    Test the conv_temp_at_time function with Celcius to Farenheight.
+    Test the conv_temp_at_time function with Celsius to Fahrenheit.
     """
     input_scale = "C"
     output_scale = "F"
@@ -26,7 +26,7 @@ test_conv_temp_at_time()
 
 def test_conv_rate_of_change():
     """
-    Test the conv_rate_of_change function with Celcius to Farenheight.
+    Test the conv_rate_of_change function with Celsius to Fahrenheit.
     """
     input_scale = "C"
     output_scale = "F"
