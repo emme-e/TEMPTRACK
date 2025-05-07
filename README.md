@@ -187,6 +187,7 @@ A list of functionality in this library is:
 
 A list of functionionallity in this fourier model library is:
 'fourier_law'
+'fouriers_plot'
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
