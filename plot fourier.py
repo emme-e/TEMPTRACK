@@ -4,8 +4,8 @@ import numpy as np
 
 def fourier_plot(k_value, A_value):
     """
-    this plots the heat transfer rate (q) vs temperature gradient (dT/dx)
-    using fourier's law: q = -k * A * dT/dx
+    shows how the modeled heat transfer rate (q) responds to changes in the temperature gradient (dT/dx)
+    based on Fourier's law. 
 
     Parameters:
         k_value (float): Thermal conductivity (W/m * K)
@@ -30,12 +30,12 @@ def fourier_plot(k_value, A_value):
     plt.grid(True)
     plt.show()
 
-if__name__ = "__main__":
+if __name__ == "__main__":
     try:
         k = float(input("Enter thermal conductivity k (W/m·K): "))
         A = float(input("Enter cross-sectional area A (m^2): "))
         fourier_plot(k, A)
-except ValueError:
-    print("please enter valid numeric values for k and A.")
+    except ValueError:
+        print("please enter valid numeric values for k and A.")
 
 
