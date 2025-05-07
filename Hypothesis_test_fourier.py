@@ -7,7 +7,7 @@ class FourierHypothesisTest:
     margin of a measured real-world value.
     """
 
-    def __init__(self):
+    def __init__(self, k, A, dT_dx, real_world_value, sig=0.05):
         """
         Sets up the hypothesis test using real-world measurements and details about the material.
 
@@ -59,3 +59,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+    
