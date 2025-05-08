@@ -38,6 +38,9 @@ def test_hypothesis_test():
     upper_bound = real_world_value + margin
 
     assert lower_bound <= modeled_value <= upper_bound, f"Modeled value {modeled_value} is outside the acceptable range [{lower_bound}, {upper_bound}]"
+
+test_fourier_law()
+test_hypothesis_test()
    
 
 
