@@ -12,7 +12,7 @@ You can model the temperature at any time of some object (eg. a mug of hot water
 These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. 
 This is done by using newtons law of cooling.
 
-The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the environment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale
+The temperatures can be changed between Celsius, Kelvin and Fahrenheit for just the initial temperature, the final temperature and the environment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale
 
 A graph can then be modeled to show this and a hypothsis test can be drawn to see whether the model is close to the real life value.
 
