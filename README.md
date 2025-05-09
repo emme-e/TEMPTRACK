@@ -193,7 +193,7 @@ This is the rate at which heat transfers through an object is directly proportio
 
 Joseph Fourier of France put together his equation at the beginning of the 19th century who's heat diffusion model later went on to be used by others when describing ther dynamic physical systems: 
 
-$\frac{dQ}{dt} = -KA (\frac{dT}{dx})$ 
+$\frac{dQ}{dt} = -K (\frac{dT}{dx})$ 
 
 
 
