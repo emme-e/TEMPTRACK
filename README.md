@@ -62,51 +62,35 @@ a hypothesis can be run to compare the modeled tempature at some time to the rea
 >>> hypothesis_test(initial_temp = ex_initial_temp, temp_final = ex_temp_final, temp_env = ex_temp_env, dt = ex_dt, real_world_value = ex_real_world_value)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Bounded by:[71.25,78.75].'
 ```
-
-You can also use the coded fourier model to measure the heat transfer rate of an object 
+You can also use the coded fourier model to measure the heat transfer rate of an object. 
 
 ```python
 >>> from fourier_law import fourier_law
->>> k = 50
->>> A = 100
->>> dT_dx = 3
->>> fourier_law(expected_q = -k * A * dT_dx)
-<-15000.0>
+>>> k = 200
+>>> A = 0.01
+>>> dT_dx = 75
+>>> fourier_law(k, A, dT_dx)
+(-150, 'W')
 ```
+With this value I can plot the rate of heat transfer.
+```python 
+>>> from fourier_law import base_fourier_plot
 
-with this value I can plot the rate of heat transfer
+>>> k = 200      
+>>> A = 0.01  
 
-```python
->>> import fourier_plot
-temp_gradients = np.linspace(-100, 100, 100)
-heat_transfer_rates = []
-
-    for dTdx_value in temp_gradients:
-        q_value = q_expression.subs({k: k_value, A: A_value, sym.diff(T, x): dTdx_value})
-        q_value_numeric = sym.N(q_value)
-        heat_transfer_rates.append(q_value_numeric)
-
-plt.plot(temp_gradients, heat_transfer_rates)
-plt.title("Heat Transfer Rate vs Temperature Gradient")
-plt.xlabel("Temperature Gradient (dT/dx) in K/m")
-plt.ylabel("Heat Transfer Rate (q) in Watts")
-plt.grid(True)
-plt.show()
+base_fourier_plot(k, A)
 ```
-with the above code we've outlined the graph size. We've also set up the first part of the input and the substitution of values. With the last block of code this sets up the plotting of the graph.
+This would display e.g. the conductivity of copper as a thin rod.
 
-To process the inputs in the same group of code and letting the users choose the values they want to plot we use
+We can also make a Hypothesis test to compare our results with real world data.
+```python  
+>>> from fourier_law import FourierHypothesisTest
 
-```python
->>> if __name__ == "__main__":
-    try:
-        k = float(input("Enter thermal conductivity k (W/m·K): "))
-        A = float(input("Enter cross-sectional area A (m^2): "))
-        fourier_plot(k, A)
-    except ValueError:
-        print("please enter valid numeric values for k and A.")
+test = FourierHypothesisTest(200, 0.1, -50, 110, 0.1)
+test.run_test()
 ```
-
+We've given a simple taster of what the fourier library can do.
 
 ## how to guide
 
@@ -147,15 +131,38 @@ A hypothsis test to see whether the modeled prediction is close to the real worl
 HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Bounded by:[71.25,78.75].'
 ```
-To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
+We shown the fourier model working with preset values, now we will show the model as a input based system. For plotting.
 
-```python
->>> import math
->>> import fourier_law
->>> fourier_law.expected_q(-k = 50, A = 100, dT_dx = 3)
--15000.0 
+```python 
+ >>>from fourier_law 
+ >>>import fourier_plot 
+
+k = float(input("Enter thermal conductivity k (W/m·K): "))
+A = float(input("Enter cross-sectional area A (m²): "))
+fourier_plot(k, A)
 ```
+For hypothesis testing and inputting values
+```python
+>>>from fourier_law 
+>>>import fourier_law
+>>>import base_fourier_hypothesis_test
+def main():
+    try:
+        k = float(input("Thermal conductivity k (W/m·K): "))
+        A = float(input("Cross-sectional area A (m²): "))
+        dT_dx = float(input("Temperature gradient (K/m): "))
+        real_value = float(input("Measured heat transfer rate (W): "))
+        sig_input = input("Significance level (default 0.05): ")
+        sig = float(sig_input) if sig_input else 0.05
 
+        run_hypothesis_test(k, A, dT_dx, real_value, sig)
+    except ValueError:
+        print("Please enter valid numbers.")
+
+>>>if __name__ == "__main__":
+    main()
+```
+This should allow the user to input their different parameters and change the significance of their test.
 
 ## Discussion
 This code allows you to take minimal real world values and calculate a wealth of information from it.
