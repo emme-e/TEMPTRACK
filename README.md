@@ -175,6 +175,10 @@ The temperatures can be changed between Celcius, Kelvin and Farenheight for just
 
 A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value.
 
+You can also use the fourier library to calculate heat transfer through an object and this an be plotted graph wise comparing the heat transfer rate with the the temperature gradient. You can use this to show the relationship between these variables in different objects. 
+
+You can also use the hypothesis test function in the library to test your real world data collected compared to the model. In a real world application this is a great way to test for material anomalies as if the null hypothesis is reject it could mean the material maybe variably conductive.
+
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
