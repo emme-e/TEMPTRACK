@@ -76,17 +76,20 @@ You can also use the coded fourier model to measure the heat transfer rate of an
 ```
 
 with this value I can plot the rate of heat transfer
+```python
+>>> from fourier_law import base_fourier_plot
 
+>>> k = 50     
+>>> A = 100 
+
+base_fourier_plot(k, A)
+```
+I can also make a hypthesis test comparing the model against real world data
 ```python
 >>> from Hypothesis_test_fourier import run_hypothesis_test
 >>> run_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05)
 'Model rejected at 5.0% significance level. Modeled: -50000.00 W Acceptable range: [950.00, 1050.00] '
-
 ```
-with the above code we've outlined the graph size. We've also set up the first part of the input and the substitution of values. With the last block of code this sets up the plotting of the graph.
-
-To process the inputs in the same group of code and letting the users choose the values they want to plot we use
-
 ## how to guide
 
 To compute the rate of change, the cooling constant, and temperature at some time_
@@ -125,24 +128,29 @@ A hypothsis test to see whether the modeled prediction is close to the real worl
 ```python
 HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Modeled value:[69.86] Bounded by:[71.25,78.75].'
-
 ```
 To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
-
 ```python
 >>> import math
 >>> from fourier_law import fourier_law
 >>> fourier_law(k = 50, A = 100, dT_dx = 3)
 -15000
-
-```python 
->>> from Hypothesis_test_fourier import run_hypothesis_test
->>> run_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05) 
-'Model rejected at 5.0% significance level. Modeled: -50000.00 W Acceptable range: [950.00, 1050.00] '
-
 ```
-This should allow the user to input their different parameters and change the significance of their test.
+We can also let the user input their own parameters
+```python
+ >>>from fourier_law 
+ >>>import fourier_plot 
 
+k = float(input("Enter thermal conductivity k (W/m·K): "))
+A = float(input("Enter cross-sectional area A (m²): "))
+fourier_plot(k, A)
+```
+In our fourier_law library use fourier_hypothesis_test
+```python 
+>>> from Hypothesis_test_fourier import  fourier_hypothesis_test
+>>> fourier_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05) 
+'Model rejected at 5.0% significance level. Modeled: -50000.00 W Acceptable range: [950.00, 1050.00] '
+```
 ## Discussion
 This code allows you to take minimal real world values and calculate a wealth of information from it.
 
