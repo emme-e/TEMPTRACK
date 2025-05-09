@@ -20,6 +20,25 @@ def fourier_law(k ,A , dT_dx):
     q = -k * A * dT_dx 
     return round(q,2), f" The Heat transfer rate of q = {q} watts"
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+def base_fourier_plot(k, A):
+    """
+    Plots the heat transfer rate (q) vs temperature gradient (dT/dx)
+    using Fourier's law: q = -k * A * dT/dx
+    """
+    dT_dx = np.linspace(-100, 100, 200)
+    q = -k * A * dT_dx
+
+    plt.plot(dT_dx, q)
+    plt.title("Heat Transfer Rate vs Temperature Gradient")
+    plt.xlabel("Temperature Gradient (dT/dx) [K/m]")
+    plt.ylabel("Heat Transfer Rate (q) [W]")
+    plt.grid(True)
+    plt.show()
+
+
 class FourierHypothesisTest:
     """
     This class performs a hypothesis test using Fourier's law of heat conduction.
