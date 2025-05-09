@@ -224,6 +224,22 @@ T.N.Narasimhan, Reviews of Geophysics Volume 37, Issue 1, The American Geophysic
 
 ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025)
 
+### Testing the Software
+to test the code:
+
+```
+$ python Test_ConvertNewtons.py
+$ python Test_HypothesisTestingNewtons.py
+$ python Test_Newtons.py
+$ python Test_TempConverter.py
+$ python Test_Fourier.py
+```
+To test the documentation:
+
+```
+$ python -m doctest README.md
+```
+
 ### Creators
 Emme, Kirsten, James and Harry
 
