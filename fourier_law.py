@@ -38,39 +38,21 @@ def base_fourier_plot(k, A):
     plt.grid(True)
     plt.show()
 
-
-def fourier_law(k, A, dT_dx):
+def base_fourier_hypothesis_test(k, A, dT_dx, real_value, sig=0.05):
     """
-    Computes heat transfer rate using Fourier's Law.
-    """
-    return -k * A * dT_dx
-
-def hypothesis_test_fourier_(k, A, dT_dx, real_value, sig=0.05):
-    """
-    Compares modeled heat transfer to a real-world value.
-    Accepts if it's within the significance of the real-world value.
+    Compare modeled value to real-world value within a given significance level.
     """
     modeled = fourier_law(k, A, dT_dx)
     margin = sig * real_value
-    lower, upper = real_value - margin, real_value + margin
+    lower = real_value - margin
+    upper = real_value + margin
 
-    print("Fourier Model Hypothesis Test")
+    print("Hypothesis Test:")
     print(f"Modeled: {modeled:.2f} W")
-    print(f"Observed: {real_value:.2f} W")
+    print(f"Measured: {real_value:.2f} W")
     print(f"Acceptable range: [{lower:.2f}, {upper:.2f}]")
 
     if lower <= modeled <= upper:
-        print(f"Failed to reject at {sig*100:.0f}% significance level")
+        print(f"Model acceptable at {sig*100:.1f}% significance level.")
     else:
-        print(f"Rejected at {sig*100:.0f}% significance level")
-
-
-
-
-
-
-
-
-
-
-    
+        print(f"Model rejected at {sig*100:.1f}% significance level.")
