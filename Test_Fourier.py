@@ -8,9 +8,9 @@ def test_fourier_law(k ,A , dT_dx):
         A (float): this represents the cross sectional area of the solid we are testing
         dT_dx (float): this is the temperature gradient measuring the rate of heat transfer
     """
-    k =10
-    A = 30
-    dT_dx = 6
+    k = 200
+    A = 0.01
+    dT_dx = 75
 
     expected_q = -k * A * dT_dx
     result_q, _ = fourier_law(k, A, dT_dx)
@@ -26,10 +26,10 @@ def test_hypothesis_test():
         real_world_value (float): this is the measured heat transfer rate
         sig (float): this is the significance level
     """
-    k = 10
-    A = 30
-    dT_dx = 6
-    real_world_value = -1800
+    k = 200
+    A = 0.01
+    dT_dx = 75
+    real_world_value = -160
     sig = 0.05
 
     modeled_value, _ = fourier_law(k, A, dT_dx)
