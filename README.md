@@ -185,7 +185,7 @@ You can also use the hypothesis test function in the library to test your real w
 
 For the Fourier library code, I'm going to explain parts of my code that may be harder for a user to understand. For the fourier hypothesis test we use:
 ```python
-imported fourier_hypothesis_test
+import fourier_hypothesis_test
 ```
 Then we used main function to keep inputs seperate from the hypothesis test logic, improving modularity.
 ```python
