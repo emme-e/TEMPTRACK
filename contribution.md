@@ -11,3 +11,6 @@ Kirsten Lonsdale:
 Wrote the research paper in overleaf, contributed to README.md, edited spelling in code.
 
 Harry Addington:
+- Created powerpoint 
+- Created story board 
+- Checked and ran code 
