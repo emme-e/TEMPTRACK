@@ -8,4 +8,5 @@ James Baum: hypothesis_test_fourier.py, plot_fourier.py, Test_Fourier.py, fourie
 
 Kirsten Lonsdale:
 Wrote the research paper in overleaf, contributed to README.md, edited spelling in code.
+
 Harry Addington:
