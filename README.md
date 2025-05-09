@@ -184,7 +184,7 @@ You can also use the fourier library to calculate heat transfer through an objec
 You can also use the hypothesis test function in the library to test your real world data collected compared to the model. In a real world application this is a great way to test for material anomalies as if the null hypothesis is reject it could mean the material maybe variably conductive.
 
 For the Fourier library code, I'm going to explain parts of my code that may be harder for a user to understand. For the fourier hypothesis test we use:
-python
+```python
 imported fourier_hypothesis_test
 ```
 Then we used main function to keep inputs seperate from the hypothesis test logic, improving modularity.
