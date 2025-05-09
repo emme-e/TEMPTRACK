@@ -75,24 +75,19 @@ You can also use the coded fourier model to measure the heat transfer rate of an
 
 ```
 
-with this value I can plot the rate of heat transfer
-```python
->>> from fourier_law import base_fourier_plot
+I can also make a hypothesis test comparing the model against real world data and plot the rate of heat transfer
 
->>> k = 50     
->>> A = 100 
-
-base_fourier_plot(k, A)
-```
-I can also make a hypthesis test comparing the model against real world data
 ```python
 >>> from Hypothesis_test_fourier import run_hypothesis_test
+>>> from plot_fourier import fourier_plot
 >>> run_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05)
 'Model rejected at 5.0% significance level. Modeled: -50000.00 W Acceptable range: [950.00, 1050.00] '
-```
-## how to guide
+>>> fourier_plot(k_value=50, A_value=1000)
 
-To compute the rate of change, the cooling constant, and temperature at some time_
+```
+### how to guide
+
+To compute the rate of change, the cooling constant, and temperature at some time
 
 ```python
 >>> import Newtons
@@ -116,70 +111,58 @@ Convert the enviorment temperature, the initial temperature, and the final tempe
 ```
 Directly calculate the temperature at a given time and convert the temperature
 ```python
-ConvertNewtons.conv_temp_at_time(input_scale = "C", output_scale = "K", initial_temp = 100, temp_final = 70 ,temp_env = 60, dt = 10)
+>>> ConvertNewtons.conv_temp_at_time(input_scale = "C", output_scale = "K", initial_temp = 100, temp_final = 70 ,temp_env = 60, dt = 10)
 343.01
 
 ```
 Display a graph modeling newtons law of cooling
 ```python
-GraphNewtons.graphing_newtons(input_scale = "C" ,initial_temp = 100, temp_final = 70, temp_env = 60 , dt = 10, temp_range = 100)
+>>> GraphNewtons.graphing_newtons(input_scale = "C" ,initial_temp = 100, temp_final = 70, temp_env = 60 , dt = 10, temp_range = 100)
+
 ```
 A hypothsis test to see whether the modeled prediction is close to the real world value
 ```python
-HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
+>>> HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Modeled value:[69.86] Bounded by:[71.25,78.75].'
+
 ```
 To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
+
 ```python
 >>> import math
 >>> from fourier_law import fourier_law
 >>> fourier_law(k = 50, A = 100, dT_dx = 3)
 -15000
-```
-We can also let the user input their own parameters
-```python
- >>>from fourier_law 
- >>>import fourier_plot 
 
-k = float(input("Enter thermal conductivity k (W/m·K): "))
-A = float(input("Enter cross-sectional area A (m²): "))
-fourier_plot(k, A)
+```
+We can also plot a graph 
+
+```python
+>>> from plot_fourier import fourier_plot
+>>> fourier_plot(k_value=50, A_value=1000)
+
 ```
 In our fourier_law library use fourier_hypothesis_test
+
 ```python 
->>> from Hypothesis_test_fourier import  fourier_hypothesis_test
->>> fourier_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05) 
+>>> from Hypothesis_test_fourier import run_hypothesis_test
+>>> run_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05) 
 'Model rejected at 5.0% significance level. Modeled: -50000.00 W Acceptable range: [950.00, 1050.00] '
+
 ```
+
 ## Discussion
 This code allows you to take minimal real world values and calculate a wealth of information from it.
 
-You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between them and the temperature of the enviorment.
+By using newtons law of cooling you can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between them and the temperature of the enviorment.
 
-These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. This is done by using newtons law of cooling.
+These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. 
+This is done by using newtons law of cooling.
 
 The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale.
 
-A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value.
+A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to a real life value. 
 
-You can also use the fourier library to calculate heat transfer through an object and this an be plotted graph wise comparing the heat transfer rate with the the temperature gradient. You can use this to show the relationship between these variables in different objects. 
-
-You can also use the hypothesis test function in the library to test your real world data collected compared to the model. In a real world application this is a great way to test for material anomalies as if the null hypothesis is reject it could mean the material maybe variably conductive.
-
-For the Fourier library code, I'm going to explain parts of my code that may be harder for a user to understand. For the fourier hypothesis test we use:
-```python
-import fourier_hypothesis_test
-```
-Then we used main function to keep inputs seperate from the hypothesis test logic, improving modularity.
-```python
-def main():
-```
-At the end of the hypothesis script we used 
-```python
-if __name__ == "__main__":
-    main()
-```
-This check ensures that the script only runs when executed, and not when imported as a module. This prevents the script from auto running.
 
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
@@ -222,7 +205,7 @@ Available at: https://knowledge.carolina.com/discipline/interdisciplinary/math/n
 
 T.N.Narasimhan, Reviews of Geophysics Volume 37, Issue 1, The American Geophysical Union, 1999 
 
-ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025)
+ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025) 
 
 ### Testing the Software
 to test the code:
@@ -241,6 +224,6 @@ $ python -m doctest README.md
 ```
 
 ### Creators
-Emme, Kirsten, James and Harry
+Emerson Earl, Kirsten Lonsdale, James Baum and Harry Addington
 
 
