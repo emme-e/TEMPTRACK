@@ -22,12 +22,8 @@ def fourier_plot(k_value, A_value):
     plt.grid(True)
     plt.show()
 
-if __name__ == "__main__":
-    try:
-        k = float(input("Enter thermal conductivity k (W/m·K): "))
-        A = float(input("Enter cross-sectional area A (m²): "))
-        fourier_plot(k, A)
-    except ValueError:
-        print("Please enter valid numeric values for k and A.")
+k = float(input("Enter thermal conductivity k (W/m·K): "))
+A = float(input("Enter cross-sectional area A (m²): "))
+fourier_plot(k, A)
 
 
