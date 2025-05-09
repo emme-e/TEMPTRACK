@@ -39,33 +39,30 @@ def base_fourier_plot(k, A):
     plt.show()
 
 
-class FourierHypothesisTest:
+def fourier_law(k, A, dT_dx):
     """
-    This class performs a hypothesis test using Fourier's law of heat conduction.
+    Computes heat transfer rate using Fourier's Law.
     """
-    def __init__(self, k, A, dT_dx, real_world_value, sig=0.05):
-        self.k = k
-        self.A = A
-        self.dT_dx = dT_dx
-        self.real_world_value = real_world_value
-        self.sig = sig
-            
-    def run_test(self):
-        modeled_value, _ = fourier_law(self.k, self.A, self.dT_dx)
-        margin = self.sig * self.real_world_value
-        lower_bound = self.real_world_value - margin
-        upper_bound = self.real_world_value + margin
+    return -k * A * dT_dx
 
-        print("Hypothesis Test Results of the Fourier Model:")
-        print(f"Modeled value: {modeled_value} W")
-        print(f"Real-world value: {self.real_world_value} W")
-        print(f"Acceptable range: [{lower_bound}, {upper_bound}]")
+def hypothesis_test_fourier_(k, A, dT_dx, real_value, sig=0.05):
+    """
+    Compares modeled heat transfer to a real-world value.
+    Accepts if it's within the significance of the real-world value.
+    """
+    modeled = fourier_law(k, A, dT_dx)
+    margin = sig * real_value
+    lower, upper = real_value - margin, real_value + margin
 
-        if lower_bound <= modeled_value <= upper_bound:
-            print(f" Failed to reject null hypothesis at {self.sig * 100:.1f}% significance level.")
-        else:
-            print(f"Reject null hypothesis at {self.sig * 100:.1f}% significance level.")
+    print("Fourier Model Hypothesis Test")
+    print(f"Modeled: {modeled:.2f} W")
+    print(f"Observed: {real_value:.2f} W")
+    print(f"Acceptable range: [{lower:.2f}, {upper:.2f}]")
 
+    if lower <= modeled <= upper:
+        print(f"Failed to reject at {sig*100:.0f}% significance level")
+    else:
+        print(f"Rejected at {sig*100:.0f}% significance level")
 
 
 
