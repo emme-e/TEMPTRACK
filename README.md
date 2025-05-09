@@ -4,17 +4,8 @@ A python library for studying (modeling) the temperature
 change and conductivity of different objects in different conditions
 
 ## tutorial
+In this tutorial we will use `Newtons Law of Cooling` to calculate the temperature of an object 
 
-This code allows you to take minimal real world values and calculate a wealth of information from it.
-
-You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between them and the temperature of the enviorment.
-
-These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. 
-This is done by using newtons law of cooling.
-
-The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale.
-
-A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value. 
 
 ```python
 >>> from Newtons import rate_of_change, calculate_k, temperature_at_time
@@ -167,21 +158,16 @@ To compute the fourier model of heat conduction after given '-k', 'A', 'dT_dx'
 
 
 ## Discussion
+This code allows you to take minimal real world values and calculate a wealth of information from it.
 
+You can model the temperature at any time of some object (eg. a mug of hot water), just by measuring two temperatures, the time difference between them and the temperature of the enviorment.
 
-### list of functionality
+These values are then used to calculate; first the rate of temperature change of the object, The cooling constant of that object and the temperature of the object at any time. This is done by using newtons law of cooling.
 
-A list of functionality in this library is:
+The temperatures can be changed between Celcius, Kelvin and Farenheight for just the initial temperature, the final temperature and the enviorment temperature. Or you can directly calculate the temperature of the object at some time with a different temperature scale.
 
-- 'rate_of_change'
-- 'calculate_k'
-- 'temperature_at_time'
-- 'temp_converter'
-- 'conv_temp_at_time'
-- 'graphing_newtons'
+A graph can then be modeled to show this and a hypothsis test can be drawm to see whether the model is close to the real life value.
 
-A list of functionionallity in this fourier model library is:
-'fourier_law'
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
@@ -199,6 +185,22 @@ $\frac{dQ}{dt} = -KA (\frac{dT}{dx})$
 
 
 ## References
+
+### list of functionality
+
+A list of functionality in this library is:
+
+- 'rate_of_change'
+- 'calculate_k'
+- 'temperature_at_time'
+- 'temp_converter'
+- 'conv_temp_at_time'
+- 'graphing_newtons'
+
+A list of functionionallity in this fourier model library is:
+'fourier_law'
+
+### Bibliography
 Frédéric Martin (2009-2025) Newton’s Law Of Cooling, Quadco’ Engineering. 
 Available at: https://www.quadco.engineering/en/know-how/newtons-law-of-cooling.htm#:~:text=Historical%20background,convective%20and%20conductive%20heat%20transfer. (Accessed: 2 May 2025) 
 
@@ -208,3 +210,5 @@ Available at: https://knowledge.carolina.com/discipline/interdisciplinary/math/n
 T.N.Narasimhan, Reviews of Geophysics Volume 37, Issue 1, The American Geophysical Union, 1999 
 
 ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025) 
+
+
