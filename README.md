@@ -161,6 +161,11 @@ def main():
 
 >>>if __name__ == "__main__":
     main()
+
+```python
+>>> from Hypothesis_test_fourier import run_hypothesis_test
+>>> run_hypothesis_test(k = 50, A = 1000, dT_dx = 1, real_value = 1000, sig=0.05)
+```
 ```
 This should allow the user to input their different parameters and change the significance of their test.
 
