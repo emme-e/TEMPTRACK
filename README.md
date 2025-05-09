@@ -1,9 +1,9 @@
-# temperature change
+# Temperature Change
 
 A python library for studying (modeling) the temperature 
 change and conductivity of different objects in different conditions
 
-## tutorial
+## Tutorial
 In this tutorial we will use `Newtons Law of Cooling` to calculate the temperature of an object 
 
 
@@ -35,14 +35,14 @@ Now i can use the above to calculate the rate of change, the cooling constant(k)
 69.86
 
 ```
-I can also convert between Farenheight, Celcuis and Kelvin 
+I can also convert between Farenheight, Celcuis and Kelvin.
 
 ```python 
 >>> temp_converter(input_scale = ex_input_scale, output_scale = ex_output_scale, temp_env=ex_temp_env, initial_temp=ex_initial_temp, temp_final=ex_temp_final)
 (333.15, 373.15, 343.15)
 
 ```
-I can also directly calculate the calculate the rate of change, the cooling constant(k) and the temperature at some time, with converted temperature scales
+I can also directly calculate the calculate the rate of change, the cooling constant(k) and the temperature at some time, with converted temperature scales.
 
 ``` python
 >>> conv_temp_at_time(input_scale = ex_input_scale, output_scale = ex_output_scale, initial_temp = ex_initial_temp, temp_final = ex_temp_final ,temp_env = ex_temp_env, dt = ex_dt)
@@ -51,12 +51,12 @@ I can also directly calculate the calculate the rate of change, the cooling cons
 3.0
 
 ```
-A graph can be shown to display the rate of temperature change with time
+A graph can be shown to display the rate of temperature change with time.
 ```python
 >>> graphing_newtons(input_scale = ex_input_scale ,initial_temp = ex_initial_temp, temp_final = ex_temp_final, temp_env = ex_temp_env , dt = ex_dt, temp_range = ex_temp_range)
 
 ```
-a hypothesis can be run to compare the modeled tempature at some time to the real-world value
+A hypothesis can be run to compare the modeled tempature at some time to the real-world value.
 
 ```python
 >>> hypothesis_test(initial_temp = ex_initial_temp, temp_final = ex_temp_final, temp_env = ex_temp_env, dt = ex_dt, real_world_value = ex_real_world_value)
@@ -94,7 +94,7 @@ We've given a simple taster of what the fourier library can do.
 
 ## how to guide
 
-To compute the rate of change, the cooling constant, and temperature at some time_
+To compute the rate of change, the cooling constant, and temperature at some time.
 
 ```python
 >>> import Newtons
@@ -110,19 +110,19 @@ To compute the rate of change, the cooling constant, and temperature at some tim
 69.86
 
 ```
-Convert the enviorment temperature, the initial temperature, and the final temperature between any: "C","K" and "F"
+Convert the enviorment temperature, the initial temperature, and the final temperature between any: "C","K" and "F".
 ```python
 >>> TempConverter.temp_converter(input_scale = "C", output_scale = "K", temp_env=60, initial_temp=100, temp_final=70)
 (333.15, 373.15, 343.15)
 
 ```
-Directly calculate the temperature at a given time and convert the temperature
+Directly calculate the temperature at a given time and convert the temperature.
 ```python
 ConvertNewtons.conv_temp_at_time(input_scale = "C", output_scale = "K", initial_temp = 100, temp_final = 70 ,temp_env = 60, dt = 10)
 343.01
 
 ```
-Display a graph modeling newtons law of cooling
+Display a graph modeling newtons law of cooling.
 ```python
 GraphNewtons.graphing_newtons(input_scale = "C" ,initial_temp = 100, temp_final = 70, temp_env = 60 , dt = 10, temp_range = 100)
 ```
@@ -131,7 +131,7 @@ A hypothsis test to see whether the modeled prediction is close to the real worl
 HypothesisTestingNewtons.hypothesis_test(initial_temp = 100, temp_final = 70, temp_env = 60, dt = 10, real_world_value = 75)
 'Reject null hypothesis: Modeled value is outside 5% of real-world value. Bounded by:[71.25,78.75].'
 ```
-We shown the fourier model working with preset values, now we will show the model as a input based system. For plotting.
+We shown the fourier model working with preset values, now we will show the model as a input based system, for plotting.
 
 ```python 
  >>>from fourier_law 
@@ -141,7 +141,7 @@ k = float(input("Enter thermal conductivity k (W/m·K): "))
 A = float(input("Enter cross-sectional area A (m²): "))
 fourier_plot(k, A)
 ```
-For hypothesis testing and inputting values
+For hypothesis testing and inputting values.
 ```python
 >>>from fourier_law 
 >>>import fourier_law
@@ -239,6 +239,9 @@ Available at: https://knowledge.carolina.com/discipline/interdisciplinary/math/n
 
 T.N.Narasimhan, Reviews of Geophysics Volume 37, Issue 1, The American Geophysical Union, 1999 
 
-ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025) 
+ALLEN Career Institute, 2022 Fourier's Law of Heat Conduction, ALLEN. Available at: https://allen.in/jee/physics/fouriers-law-of-heat-conduction (Accessed: 2 May 2025)
+
+### Creators
+Emme, Kirsten, James and Harry
 
 
