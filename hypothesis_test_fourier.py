@@ -1,4 +1,4 @@
-def run_hypothesis_test(k, A, dT_dx, real_value, sig=0.05):
+def fourier_hypothesis_test(k, A, dT_dx, real_value, sig=0.05):
     """
     Compare modeled value to real-world value within a given significance level.
     """
@@ -26,7 +26,7 @@ def main():
         sig_input = input("Significance level (default 0.05): ")
         sig = float(sig_input) if sig_input else 0.05
 
-        run_hypothesis_test(k, A, dT_dx, real_value, sig)
+        fourier_hypothesis_test(k, A, dT_dx, real_value, sig)
     except ValueError:
         print("Please enter valid numbers.")
 
