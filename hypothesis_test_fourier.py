@@ -7,7 +7,7 @@ def fourier_hypothesis_test(k, A, dT_dx, real_value, sig=0.05):
     lower = real_value - margin
     upper = real_value + margin
 
-    print("\nHypothesis Test:")
+    print("Hypothesis Test:")
     print(f"Modeled: {modeled:.2f} W")
     print(f"Measured: {real_value:.2f} W")
     print(f"Acceptable range: [{lower:.2f}, {upper:.2f}]")
