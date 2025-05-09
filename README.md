@@ -184,6 +184,21 @@ You can also use the fourier library to calculate heat transfer through an objec
 
 You can also use the hypothesis test function in the library to test your real world data collected compared to the model. In a real world application this is a great way to test for material anomalies as if the null hypothesis is reject it could mean the material maybe variably conductive.
 
+For the Fourier library code, I'm going to explain parts of my code that may be harder for a user to understand. For the fourier hypothesis test we use:
+```python
+imported fourier_hypothesis_test
+```
+Then we used main function to keep inputs seperate from the hypothesis test logic, improving modularity.
+```python
+def main():
+```
+At the end of the hypothesis script we used 
+```python
+if __name__ == "__main__":
+    main()
+```
+This check ensures that the script only runs when executed, and not when imported as a module. This prevents the script from auto running.
+
 ### Newton's cooling law
 Sir Isaac Newton introduced his cooling law in the 1700's, which is based on purely empirical measurements, due to curiosity over how air and water cools and warms objects replacing the dominant theory at the time: 'caloric theory' which hypothesised heat was a substance that was fluid-like in nature. 
 
